@@ -3,8 +3,8 @@ import bcrypt from "bcrypt";
 const prisma = new PrismaClient()
 
 async function main() {
-  const alice = await prisma.user.upsert({
-    where: { number: '1111111111' },
+  const alice = await prisma.user.upsert({ // create or update
+    where: { number: '1111111111' },    // Creating dummy user and password in the database 
     update: {},
     create: {
       number: '1111111111',
